@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookFinder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <p class="eyebrow">BookFinder</p>
+      <h1>Find your next favourite book</h1>
+    </div>
+    <nav class="tab-bar" aria-label="Main tabs">
+      <button type="button" class="tab-button active" data-tab="search">Search</button>
+      <button type="button" class="tab-button" data-tab="favourites">Favourites</button>
+      <button type="button" class="tab-button" data-tab="read-later">Read Later</button>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <section id="search" class="tab-panel active" aria-labelledby="search-tab">
+      <div class="search-controls">
+        <label class="field">
+          <span>Search by title</span>
+          <input id="search-input" type="search" placeholder="Search books" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>Sort by</span>
+          <select id="sort-select">
+            <option value="relevance" selected>Relevance</option>
+            <option value="new">Newest</option>
+            <option value="old">Oldest</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </label>
+      </div>
+      <div id="search-status" class="search-status"></div>
+      <div id="results" class="results-grid"></div>
+    </section>
+
+    <section id="detail" class="tab-panel" aria-labelledby="detail-tab">
+      <button id="detail-back" type="button" class="secondary-button">← Back to search</button>
+      <div id="detail-view" class="detail-view"></div>
+    </section>
+
+    <section id="favourites" class="tab-panel" aria-labelledby="favourites-tab">
+      <div class="list-header">
+        <div>
+          <h2>Favourites</h2>
+          <p class="subtle">Save books you love with a ♥</p>
+        </div>
+        <label class="field field-inline">
+          <span>Filter</span>
+          <input id="favourites-filter" type="search" placeholder="Filter by title or author" autocomplete="off" />
+        </label>
+      </div>
+      <div id="favourites-list" class="list-grid"></div>
+    </section>
+
+    <section id="read-later" class="tab-panel" aria-labelledby="read-later-tab">
+      <div class="list-header">
+        <div>
+          <h2>Read Later</h2>
+          <p class="subtle">Save books to revisit whenever you like</p>
+        </div>
+        <label class="field field-inline">
+          <span>Filter</span>
+          <input id="read-later-filter" type="search" placeholder="Filter by title or author" autocomplete="off" />
+        </label>
+      </div>
+      <div id="read-later-list" class="list-grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
